@@ -1,9 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://c61h7fir7mlkr"]
+[gd_scene load_steps=3 format=3 uid="uid://q6y4iiipptfw"]
 
-[ext_resource type="Texture2D" uid="uid://cuda4potdpdn4" path="res://Assets/Tree.png" id="1_t1l56"]
+[ext_resource type="PackedScene" uid="uid://c61h7fir7mlkr" path="res://Decorations/TreeSprite.tscn" id="1_g78us"]
 
-[node name="Tree" type="Sprite3D"]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
-billboard = 2
-texture_filter = 0
-texture = ExtResource("1_t1l56")
+[sub_resource type="BoxShape3D" id="BoxShape3D_yq1ck"]
+size = Vector3(1.86109, 3.03604, 1.58334)
+
+[node name="Tree" type="StaticBody3D"]
+
+[node name="Tree" parent="." instance=ExtResource("1_g78us")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0815923, -0.124053, 0)
+shape = SubResource("BoxShape3D_yq1ck")
