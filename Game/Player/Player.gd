@@ -34,6 +34,10 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _input(event):
+	if event.is_action_pressed("shoot") and not Global.shooting and Global.can_shoot:
+		Global.shooting = true
+	else:
+		Global.shooting = false
 	if event.is_action_pressed("ui_cancel"):
 		if captured:
 			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

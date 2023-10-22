@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3lq5bacwxd5o"]
+[gd_scene load_steps=10 format=3 uid="uid://b3lq5bacwxd5o"]
 
 [ext_resource type="PackedScene" uid="uid://cjt64d00w7nmf" path="res://Player/Player.tscn" id="1_vvuxk"]
 [ext_resource type="PackedScene" uid="uid://q6y4iiipptfw" path="res://Decorations/Tree.tscn" id="2_5y4k6"]
+[ext_resource type="PackedScene" uid="uid://ccirhlcpf8wbh" path="res://Gun/Gun2D.tscn" id="3_j5xuc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_8xjoo"]
 
@@ -94,3 +95,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.2259, 3.95835, -6.71297)
 
 [node name="Tree17" parent="Trees" instance=ExtResource("2_5y4k6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5042, 3.95835, 4.91204)
+
+[node name="Gun2D" parent="." instance=ExtResource("3_j5xuc")]
