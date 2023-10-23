@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://b3lq5bacwxd5o"]
+[gd_scene load_steps=11 format=3 uid="uid://b3lq5bacwxd5o"]
 
 [ext_resource type="PackedScene" uid="uid://cjt64d00w7nmf" path="res://Player/Player.tscn" id="1_vvuxk"]
 [ext_resource type="PackedScene" uid="uid://q6y4iiipptfw" path="res://Decorations/Tree.tscn" id="2_5y4k6"]
-[ext_resource type="Texture2D" uid="uid://buybpipc7su6o" path="res://Assets/ELR_Corsshairs.png" id="3_46a8x"]
 [ext_resource type="PackedScene" uid="uid://ccirhlcpf8wbh" path="res://Gun/Gun2D.tscn" id="3_j5xuc"]
 [ext_resource type="Texture2D" uid="uid://xxtvw2ohna0i" path="res://Assets/Crosshair.png" id="4_rjh52"]
 
@@ -24,21 +23,6 @@ albedo_color = Color(0.937255, 0.956863, 0.945098, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_ofh5h"]
 material = SubResource("StandardMaterial3D_ologn")
 size = Vector3(50, 0.3, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6p21l"]
-atlas = ExtResource("3_46a8x")
-region = Rect2(48, 16, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_0fulh"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6p21l")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
 
 [node name="Main" type="Node3D"]
 
@@ -115,17 +99,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5042, 3.95835, 4.91204)
 
 [node name="Control" type="Node2D" parent="."]
 
-[node name="Crosshair" type="AnimatedSprite2D" parent="Control"]
-texture_filter = 1
-position = Vector2(128, 72)
-sprite_frames = SubResource("SpriteFrames_0fulh")
-
-[node name="Gun2D" parent="Control" instance=ExtResource("3_j5xuc")]
-position = Vector2(1, 0)
-
-[node name="Crosshair" type="Sprite2D" parent="."]
-visible = false
+[node name="Crosshair" type="Sprite2D" parent="Control"]
 texture_filter = 3
 texture_repeat = 1
 position = Vector2(128, 72)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_rjh52")
+
+[node name="Gun2D" parent="Control" instance=ExtResource("3_j5xuc")]
+position = Vector2(1, 0)

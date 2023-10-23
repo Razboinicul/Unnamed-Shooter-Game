@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 var mouseSensibility = 1200/15
+var normalFOV = 65
+var aimFOV = 12
 var captured = true
 var mouse_relative_x = 0
 var mouse_relative_y = 0
@@ -14,6 +16,10 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta):
+	if Input.is_action_pressed("aim"):
+		$Camera.fov = aimFOV
+	else:
+		$Camera.fov = normalFOV
 	if Global.shooting:
 		var obj = $Camera/RayCast3D.get_collider()
 		if obj != null:
