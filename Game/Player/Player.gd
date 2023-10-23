@@ -1,10 +1,10 @@
 extends CharacterBody3D
 
-var mouseSensibility = 1200/10
+var mouseSensibility = 1200/15
 var captured = true
 var mouse_relative_x = 0
 var mouse_relative_y = 0
-const SPEED = 500
+const SPEED = 500*2
 const JUMP_VELOCITY = 450
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -14,6 +14,11 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta):
+	if Global.shooting:
+		var obj = $Camera/RayCast3D.get_collider()
+		if obj != null:
+			if "Tree" in obj.name:
+				obj.queue_free()
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta

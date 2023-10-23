@@ -95,6 +95,6 @@ animations = [{
 script = ExtResource("1_o5jed")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(155, 45)
+position = Vector2(156, 45)
 sprite_frames = SubResource("SpriteFrames_7liel")
 animation = &"shoot"

@@ -11,5 +11,9 @@ script = ExtResource("1_iqfso")
 shape = SubResource("CapsuleShape3D_uhf7v")
 
 [node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 current = true
 fov = 65.0
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera"]
+target_position = Vector3(0, 0, -25)
