@@ -103,7 +103,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5042, 3.95835, 4.91204)
 [node name="Control" type="Node2D" parent="."]
 
 [node name="Aim" type="Sprite2D" parent="Control"]
-position = Vector2(126, 93)
+position = Vector2(129, 85)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_uvgif")
 
