@@ -19,7 +19,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 18.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -60,4 +60,3 @@ script = ExtResource("1_o5jed")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(156, 44)
 sprite_frames = SubResource("SpriteFrames_7liel")
-animation = &"shoot"
