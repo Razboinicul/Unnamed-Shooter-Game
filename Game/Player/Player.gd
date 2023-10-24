@@ -16,7 +16,8 @@ func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func _physics_process(delta):
-	if Input.is_action_pressed("aim"):
+	Global.aiming = Input.is_action_pressed("aim")
+	if Global.aiming:
 		$Camera.fov = aimFOV
 	else:
 		$Camera.fov = normalFOV
